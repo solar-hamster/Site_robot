@@ -1,0 +1,14 @@
+{%  extends "index.html" %}
+
+{% block application %}
+{% for robot in robot %}
+    <div>
+        <h2><a href="{% url 'robot' robot_id=robot.id %}">{{ robot.name }}</a></h2>
+        {% if robot.photo %}
+            <img src="{{ robot.photo.url }}" alt="{{ robot.name }}">
+        {% endif %}
+        <div>{{ robot.price }}</div>
+        <div>{{ robot.description }}</div>
+    </div>
+{% endfor %}
+{% endblock %}
