@@ -15,6 +15,9 @@
         <div>{{ robot.description }}</div>
     </div>
     <h2>Заявка</h2>
+    {% if sended %}
+        Спасибо! Ваша заявка принята! Наш менеджер свяжется с Вами в ближайшее время!
+    {% endif %}
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}

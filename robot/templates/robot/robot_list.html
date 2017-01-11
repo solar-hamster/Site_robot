@@ -1,6 +1,10 @@
 {%  extends "index.html" %}
 
 {% block application %}
+    <form action="" method="get">
+    {{ form.as_p }}
+        <input type="submit" value="Поиск">
+    </form>
 {% for robot in robot %}
     <div>
         <h2><a href="{% url 'robot' robot_id=robot.id %}">{{ robot.name }}</a></h2>
